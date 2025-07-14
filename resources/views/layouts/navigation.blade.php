@@ -1,8 +1,8 @@
         <div id="head">
             <h1><a href="{{ route('top') }}"><img src="images/atlas.png"></a></h1>
-                    <p>〇〇さん</p>
             <div id="headNav">
                 <div id="headNavToggler">
+                    <p>〇〇さん</p>
                     <span id="headNavToggleButton"></span>
                 </div>
                 <ul id="headNavContent" style="display: none;">
