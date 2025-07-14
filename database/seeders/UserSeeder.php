@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,32 +17,27 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            [
-                'username' => 'テスト1',
-                'email' => 'test_1@example.com',
-                'password' => Hash::make('AtlasSNS1234')
-            ],
-            [
-                'username' => 'テスト2',
-                'email' => 'test_2@example.com',
-                'password' => Hash::make('AtlasSNS1234')
-            ],
-            [
-                'username' => 'テスト3',
-                'email' => 'test_3@example.com',
-                'password' => Hash::make('AtlasSNS1234')
-            ],
-            [
-                'username' => 'テスト4',
-                'email' => 'test_4@example.com',
-                'password' => Hash::make('AtlasSNS1234')
-            ],
-            [
-                'username' => 'テスト5',
-                'email' => 'test_5@example.com',
-                'password' => Hash::make('AtlasSNS1234')
-            ],
-        ]);
+        $users = [];
+
+        $icons = [
+            'icon1.png',
+            'icon2.png',
+            'icon3.png',
+            'icon4.png',
+            'icon5.png',
+            'icon6.png',
+            'icon7.png',
+        ];
+
+        for ($i=1; $i < 8; $i++) {
+            $users[] = [
+                'username' => "テスト{$i}",
+                'email' => "test_{$i}@atlas.jp",
+                'password' => Hash::make('AtlasSNS1234'),
+                'icon_image' => Arr::random($icons)
+            ];
+        }
+
+        DB::table('users')->insert($users);
     }
 }
