@@ -109,3 +109,35 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+
+/* followList */
+#followListContainer {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 2.5em;
+    padding: 1em 2em;
+    border-bottom: 10px solid #E0E0E0;
+}
+
+#followListContainer h2 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+#followList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 1em;
+}
+
+#followList img {
+    width: 3.5em;
+    height: 3.5em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+}

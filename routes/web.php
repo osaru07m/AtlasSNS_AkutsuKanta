@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
@@ -28,7 +29,7 @@ Route::middleware('auth')->group(function() {
 
     Route::get('search', [UsersController::class, 'index']);
 
-    Route::get('follow-list', [PostsController::class, 'index']);
+    Route::get('follow-list', [FollowsController::class, 'followList'])->name('followList');
     Route::get('follower-list', [PostsController::class, 'index']);
 
 });
