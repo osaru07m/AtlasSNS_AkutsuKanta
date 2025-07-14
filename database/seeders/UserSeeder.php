@@ -20,27 +20,27 @@ class UserSeeder extends Seeder
             [
                 'username' => 'テスト1',
                 'email' => 'test_1@example.com',
-                'password' => Hash::make('AtlasSNS_1234')
+                'password' => Hash::make('AtlasSNS1234')
             ],
             [
                 'username' => 'テスト2',
                 'email' => 'test_2@example.com',
-                'password' => Hash::make('AtlasSNS_1234')
+                'password' => Hash::make('AtlasSNS1234')
             ],
             [
                 'username' => 'テスト3',
                 'email' => 'test_3@example.com',
-                'password' => Hash::make('AtlasSNS_1234')
+                'password' => Hash::make('AtlasSNS1234')
             ],
             [
                 'username' => 'テスト4',
                 'email' => 'test_4@example.com',
-                'password' => Hash::make('AtlasSNS_1234')
+                'password' => Hash::make('AtlasSNS1234')
             ],
             [
                 'username' => 'テスト5',
                 'email' => 'test_5@example.com',
-                'password' => Hash::make('AtlasSNS_1234')
+                'password' => Hash::make('AtlasSNS1234')
             ],
         ]);
     }
