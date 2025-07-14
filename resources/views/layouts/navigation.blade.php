@@ -8,7 +8,7 @@
                 <ul id="headNavContent" style="display: none;">
                     <li><a href="{{ route('top') }}">ホーム</a></li>
                     <li><a href="{{ route('profile') }}">プロフィール</a></li>
-                    <li><a href="">ログアウト</a></li>
+                    <li><a href="{{ route('logout') }}">ログアウト</a></li>
                 </ul>
             </div>
         </div>

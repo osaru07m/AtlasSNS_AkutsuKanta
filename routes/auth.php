@@ -18,3 +18,5 @@ Route::middleware('guest')->group(function () {
     Route::post('added', [RegisteredUserController::class, 'added']);
 
 });
+
+Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
