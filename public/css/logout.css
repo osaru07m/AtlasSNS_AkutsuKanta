@@ -5,6 +5,125 @@ html{
 }
 
 body{
-    height: 100%;
-    background: #186AC9;
+    background: linear-gradient(to bottom, #0168C7, #55AEFC, #FFE64B);
+    background-attachment: fixed;
+    min-height: 100%;
+    padding: 2em 0;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ANCHOR - Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 img {
+    max-width: 3.5em;
+}
+
+header p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+/* ANCHOR - Common */
+#container {
+    width: 40%;
+    max-width: 350px;
+    border-radius: 1em;
+    background-color: #00000025;
+    padding: 2em;
+}
+
+input[type="submit"],
+.btn a {
+    background-color: #ED3B50;
+    color: #ffffff;
+    border: none;
+    border-radius: .5em;
+    padding: .5em 2em;
+    font-size: 1.125em;
+}
+
+input[type="submit"] {
+    margin-left: auto;
+}
+
+.error-message {
+    color: #ffffff;
+    font-size: 1em;
+    background-color: #ED3B50;
+    margin-top: 0.25em;
+    padding: 0.125em 0.25em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+
+/* ANCHOR - Login and Register */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+form h2 {
+    font-size: 1.5em;
+}
+
+form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+form div label {
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+form div input {
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: .5em;
+    color: #000000;
+    border: 1px solid #707070;
+}
+
+form a,
+form a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ANCHOR - Added */
+#clear {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+}
+
+#clear h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+#clear p {
+    font-size: 1.125em;
+    margin-bottom: 0;
 }

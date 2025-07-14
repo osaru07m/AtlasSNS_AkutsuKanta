@@ -1,8 +1,7 @@
 <x-logout-layout>
-    <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '〇〇']) !!}
 
 <h2>新規ユーザー登録</h2>
+    {{ Form::open(['url' => '/register']) }}
 
 {{ Form::label('ユーザー名') }}
 {{ Form::text('username',null,['class' => 'input']) }}
