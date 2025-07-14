@@ -6,8 +6,8 @@
                     <span id="headNavToggleButton"></span>
                 </div>
                 <ul id="headNavContent" style="display: none;">
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">プロフィール</a></li>
+                    <li><a href="{{ route('top') }}">ホーム</a></li>
+                    <li><a href="{{ route('profile') }}">プロフィール</a></li>
                     <li><a href="">ログアウト</a></li>
                 </ul>
             </div>
