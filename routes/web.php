@@ -22,7 +22,7 @@ require __DIR__ . '/auth.php';
 
 Route::middleware('auth')->group(function() {
 
-    Route::get('top', [PostsController::class, 'index']);
+    Route::get('top', [PostsController::class, 'index'])->name('top');
 
     Route::get('profile', [ProfileController::class, 'profile']);
 
