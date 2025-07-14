@@ -26,6 +26,10 @@ header{
 /* head nav */
 #headNav {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 #headNavToggler {
@@ -81,6 +85,15 @@ header{
 #headNavContent a:hover {
     background-color: #00297E;
     color: #ffffff;
+}
+
+#headNav .user-icon {
+    width: 3em;
+    height: 3em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
 }
 
 /* main content */

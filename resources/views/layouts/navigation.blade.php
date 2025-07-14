@@ -10,5 +10,6 @@
                     <li><a href="{{ route('profile') }}">プロフィール</a></li>
                     <li><a href="{{ route('logout') }}">ログアウト</a></li>
                 </ul>
+                <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="{{ Auth::user()->username }}のアイコン" class="user-icon">
             </div>
         </div>
