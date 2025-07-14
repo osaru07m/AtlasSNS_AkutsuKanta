@@ -69,6 +69,7 @@ header{
     transform: translateX(-50%);
     width: max-content;
     border: 1px solid #00297E;
+    margin: 1em 0 0 0;
 }
 #headNavContent.view {
     display: block;
