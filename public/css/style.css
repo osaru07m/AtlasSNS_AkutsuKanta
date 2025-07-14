@@ -6,6 +6,81 @@ body{
 /* header */
 header{
     background:#186AC9;
+    color: #ffffff;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+#head h1 {
+    margin: 0;
+}
+
+#head h1 a img {
+    max-height: 1.25em;
+}
+/* head nav */
+#headNav {
+    position: relative;
+}
+
+#headNavToggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    margin-right: 0.5em;
+}
+
+#headNavToggler p {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+#headNavToggler #headNavToggleButton {
+    display: block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-bottom: 2.5px solid #ffffff;
+    border-left: 2.5px solid #ffffff;
+    transform: rotate(-45deg) translateX(25%);
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+#headNavToggler #headNavToggleButton.active {
+    transform: rotate(135deg) translateY(-25%);
+}
+
+#headNavContent {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: max-content;
+    border: 1px solid #00297E;
+}
+#headNavContent.view {
+    display: block;
+}
+
+#headNavContent a {
+    display: block;
+    padding: 1em 2.5em;
+    text-align: center;
+    background-color: #ffffff;
+    color: #636b6f;
+    text-decoration: none;
+}
+#headNavContent a:hover {
+    background-color: #00297E;
+    color: #ffffff;
 }
 
 /* main content */
