@@ -110,8 +110,9 @@ header{
     border-left: 1px solid #727272;
 }
 
-/* followList */
-#followListContainer {
+/* followList and followerList */
+#followListContainer,
+#followerListContainer {
     display: flex;
     align-items: start;
     justify-content: flex-start;
@@ -120,12 +121,14 @@ header{
     border-bottom: 10px solid #E0E0E0;
 }
 
-#followListContainer h2 {
+#followListContainer h2,
+#followerListContainer h2 {
     margin: 0;
     white-space: nowrap;
 }
 
-#followList {
+#followList,
+#followerList {
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
@@ -133,7 +136,8 @@ header{
     gap: 1em;
 }
 
-#followList img {
+#followList img,
+#followerList img {
     width: 3.5em;
     height: 3.5em;
     aspect-ratio: 1/1;

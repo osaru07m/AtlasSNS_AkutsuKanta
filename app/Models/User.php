@@ -38,4 +38,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
     }
+
+    // auth's follower
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
+    }
 }
