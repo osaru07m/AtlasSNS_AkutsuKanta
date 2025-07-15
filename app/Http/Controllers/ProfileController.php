@@ -16,6 +16,9 @@ class ProfileController extends Controller
         if(is_null($userId)) {
             return view('profiles.profile');
         }
+        elseif($userId == Auth::user()->id) {
+            return redirect(route('profile'));
+        }
         else {
             $user = User::where('id', $userId)->first();
 
