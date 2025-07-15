@@ -175,3 +175,34 @@ header{
     align-items: center;
     gap: 3em;
 }
+
+#otherProfile > div:nth-child(3) {
+    text-align: center;
+    margin-bottom: -3em;
+    margin-right: -3em;
+}
+
+#otherProfile > div:nth-child(3) > p.is-follower {
+    color: #727272;
+    font-size: 1em;
+}
+
+#otherProfile > div:nth-child(3) > .btn {
+    --bg-follow: #0756CF;
+    --bg-follow-back: #0756CF;
+    --bg-unfollow: #EE3833;
+
+    padding: .5em 2em;
+    border-radius: .5em;
+    color: #E0E0E0;
+}
+
+#otherProfile > div:nth-child(3) > .btn.follow{
+    background-color: var(--bg-follow);
+}
+#otherProfile > div:nth-child(3) > .btn.follow-back{
+    background-color: var(--bg-follow-back);
+}
+#otherProfile > div:nth-child(3) > .btn.unfollow{
+    background-color: var(--bg-unfollow);
+}
