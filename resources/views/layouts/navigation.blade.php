@@ -2,7 +2,7 @@
             <h1><a href="{{ route('top') }}"><img src="{{ asset('images/atlas.png') }}"></a></h1>
             <div id="headNav">
                 <div id="headNavToggler">
-                    <p>〇〇さん</p>
+                    <p>{{ Auth::user()->username }}さん</p>
                     <span id="headNavToggleButton"></span>
                 </div>
                 <ul id="headNavContent" style="display: none;">
