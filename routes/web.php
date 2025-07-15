@@ -28,7 +28,8 @@ Route::middleware('auth')->group(function() {
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('{userId}/profile', [ProfileController::class, 'profile'])->name('profile.other');
 
-    Route::get('search', [UsersController::class, 'index']);
+    Route::get('search', [UsersController::class, 'search'])->name('search');
+    Route::post('search', [UsersController::class, 'search'])->name('search');
 
     Route::get('follow-list', [FollowsController::class, 'followList'])->name('followList');
     Route::get('{userId}/follow', [FollowsController::class, 'follow'])->name('follow');
