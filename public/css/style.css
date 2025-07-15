@@ -145,3 +145,33 @@ header{
     object-position: center;
     border-radius: 100%;
 }
+
+/* Profile.Other */
+#otherProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 4em;
+    border-bottom: 10px solid #E0E0E0;
+}
+
+#otherProfile p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#otherProfile > div:nth-child(2) {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1em;
+}
+#otherProfile > div:nth-child(2) > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
