@@ -52,4 +52,12 @@ class User extends Authenticatable
     public function isFollowedBy($id) {
         return $this->followers()->where('following_id', $id)->exists();
     }
+
+    public function followsCount() {
+        return $this->follows()->count();
+    }
+
+    public function followersCount() {
+        return $this->followers()->count();
+    }
 }
