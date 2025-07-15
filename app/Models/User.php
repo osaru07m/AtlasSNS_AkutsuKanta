@@ -60,4 +60,28 @@ class User extends Authenticatable
     public function followersCount() {
         return $this->followers()->count();
     }
+
+    // フォロー
+    public function follow($userId)
+    {
+        // 自分自身はフォロー不可
+        if ($this->id == $userId) return false;
+
+        // フォローしていなければフォロー可能
+        if (!$this->isFollowing($userId)) {
+            $this->follows()->attach($userId);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    // フォロー解除する
+    public function unfollow($userId)
+    {
+        $this->follows()->detach($userId);
+
+        return true;
+    }
 }

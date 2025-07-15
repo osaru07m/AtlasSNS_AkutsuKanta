@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function() {
     Route::get('search', [UsersController::class, 'index']);
 
     Route::get('follow-list', [FollowsController::class, 'followList'])->name('followList');
+    Route::get('{userId}/follow', [FollowsController::class, 'follow'])->name('follow');
+
     Route::get('follower-list', [FollowsController::class, 'followerList'])->name('followerList');
 
+    Route::get('{userId}/unfollow', [FollowsController::class, 'unfollow'])->name('unfollow');
 });

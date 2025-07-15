@@ -33,9 +33,9 @@
 
             {{-- ボタン分岐 --}}
             @if (!$isFollowing)
-            <button class="btn follow">フォローする</button>
+            <a href="{{ route('follow', ['userId' => $user->id]) }}" class="btn follow">フォローする</a>
             @elseif ($isFollowing)
-            <button class="btn unfollow">フォロー解除</button>
+            <a href="{{ route('unfollow', ['userId' => $user->id]) }}" class="btn unfollow">フォロー解除</a>
             @endif
 
         </div>
