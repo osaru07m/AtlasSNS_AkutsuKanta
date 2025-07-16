@@ -3,7 +3,7 @@
     <div id="profileContainer">
         <img src="{{ asset('images/' . Auth::user()->icon_image) }}">
 
-        <form action="{{ route('profile') }}" method="post">
+        <form action="{{ route('profile') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="username">ユーザー名</label>
@@ -50,6 +50,7 @@
                 <div class="error-message">{{ $message }}</div>
                 @enderror
             </div>
+            <input type="submit" value="更新">
         </form>
     </div>
 

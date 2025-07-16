@@ -7,7 +7,9 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
@@ -50,5 +52,29 @@ class ProfileController extends Controller
             'icon_image.image' => '画像ファイルを選択してください。',
             'icon_image.mimes' => '画像は jpg, png, bmp, gif, svg のいずれかで指定してください。',
         ]);
+
+        $user = Auth::user();
+
+        $user->username = $request->username;
+        $user->email = $request->email;
+
+        $user->password = Hash::make($request->password);
+
+        if (!empty($request->bio)) {
+            $user->bio = $request->bio;
+        }
+
+        if ($request->hasFile('icon_image')) {
+            $imageFile = $request->file('icon_image');
+
+            // 衝突防止のため、uuid付与
+            $imageName = Str::uuid() . '_' . $imageFile->getClientOriginalExtension();
+            $imageFile->move(public_path('images'), $imageName);
+            $user->icon_image = $imageName;
+        }
+
+        $user->update();
+
+        return redirect()->route('top');
     }
 }

@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function() {
     Route::get('top', [PostsController::class, 'index'])->name('top');
 
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('profile', [ProfileController::class, 'update']);
+
     Route::get('{userId}/profile', [ProfileController::class, 'profile'])->name('profile.other');
 
     Route::get('search', [UsersController::class, 'search'])->name('search');
