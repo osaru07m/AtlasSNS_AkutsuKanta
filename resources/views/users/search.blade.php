@@ -5,7 +5,7 @@
             <div>
                 {{ Form::text('keyword', old('keyword'), ['class' => 'input', 'placeholder' => 'ユーザー名で検索']) }}
                 <button type="submit" class="search-button">
-                    <img src="{{ asset('images/search.png') }}" alt="検索" style="width: 24px; height: 24px;">
+                    <img src="{{ asset('images/search.png') }}" alt="検索">
                 </button>
             </div>
             @if (isset($keyword))
@@ -20,6 +20,9 @@
                 $isFollowing = $auth->isFollowing($user->id);
                 $isFollowedBy = $auth->isFollowedBy($user->id);
                 @endphp
+
+                <img src="{{ asset('images/' . $user->icon_image) }}" alt="{{ $user->username }}さんのアイコン">
+                <span>{{ $user->username }}</span>
 
                 <div>
                     @if ($isFollowedBy)

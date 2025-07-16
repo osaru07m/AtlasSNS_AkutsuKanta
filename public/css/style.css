@@ -206,3 +206,109 @@ header{
 #otherProfile > div:nth-child(3) > .btn.unfollow{
     background-color: var(--bg-unfollow);
 }
+
+/* Search */
+#searchContainer form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 4em;
+    border-bottom: 10px solid #E0E0E0;
+}
+
+#searchContainer form div {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: .5em;
+}
+
+#searchContainer form div input {
+    font-size: 2.25rem;
+    height: 3rem;
+}
+
+#searchContainer form div button {
+    border: none;
+    background: none;
+    padding: 0;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchContainer form div button img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+#searchContainer form p {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+#searchContainer #users {
+    width: 50%;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#searchContainer #users li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+#searchContainer #users li img {
+    width: 4.5em;
+    height: 4.5em;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+#searchContainer #users li span {
+    flex-grow: 1;
+    font-size: 1.125em;
+}
+
+#searchContainer #users li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#searchContainer #users li div .is-follower {
+    color: #727272;
+    font-size: 1em;
+    margin: 0;
+}
+#searchContainer #users li div .btn {
+    --bg-follow: #0756CF;
+    --bg-follow-back: #0756CF;
+    --bg-unfollow: #EE3833;
+
+    padding: .5em 2em;
+    border-radius: .5em;
+    color: #E0E0E0;
+}
+#searchContainer #users li div .btn.follow {
+    background-color: var(--bg-follow);
+}
+
+#searchContainer #users li div .btn.follow-back {
+    background-color: var(--bg-follow-back);
+}
+
+#searchContainer #users li div .btn.unfollow {
+    background-color: var(--bg-unfollow);
+}
