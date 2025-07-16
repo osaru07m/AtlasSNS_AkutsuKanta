@@ -15,6 +15,26 @@
         <ul id="users">
             @foreach ($users as $user)
             {{ $user->username }}
+            <li>
+                @php
+                $auth = Auth::user();
+                $isFollowing = $auth->isFollowing($user->id);
+                $isFollowedBy = $auth->isFollowedBy($user->id);
+                @endphp
+
+                <div>
+                    @if ($isFollowedBy)
+                    <p class="is-follower">フォローされています</p>
+                    @endif
+
+                    {{-- ボタン分岐 --}}
+                    @if (!$isFollowing)
+                    <button class="btn follow">フォローする</button>
+                    @elseif ($isFollowing)
+                    <button class="btn unfollow">フォロー解除</a>
+                    @endif
+                </div>
+            </li>
             @endforeach
         </ul>
     </div>
