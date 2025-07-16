@@ -12,5 +12,11 @@
             <p>検索ワード：{{ $keyword }}</p>
             @endif
         {{ Form::close() }}
+        <ul id="users">
+            @foreach ($users as $user)
+            {{ $user->username }}
+            @endforeach
+        </ul>
+    </div>
 
 </x-login-layout>
