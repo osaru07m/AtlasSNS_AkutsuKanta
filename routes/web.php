@@ -24,6 +24,7 @@ require __DIR__ . '/auth.php';
 Route::middleware('auth')->group(function() {
 
     Route::get('top', [PostsController::class, 'index'])->name('top');
+    Route::post('top', [PostsController::class, 'create']);
 
     Route::get('profile', [ProfileController::class, 'profile'])->name('profile');
     Route::post('profile', [ProfileController::class, 'update']);
