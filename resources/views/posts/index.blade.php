@@ -28,6 +28,7 @@
 
       <div class="meta">
         <span>{{ $post->created_at->format('Y-m-d H:i') }}</span>
+        @if ($post->user_id == Auth::user()->id)
         <div class="actionBtns">
           <button class="editBtnTrigger">
             <span class="icon">
@@ -42,6 +43,7 @@
             </span>
           </button>
         </div>
+        @endif
       </div>
 
       <div class="modal editModal">
