@@ -10,7 +10,16 @@ class PostsController extends Controller
 {
     //
     public function index(){
-        return view('posts.index');
+        $auth = Auth::user();
+
+        // 自分 + フォローしているユーザーのID一覧を取得
+        $followIds = $auth->follows()->pluck('followed_id')->toArray();
+        $targetUserIds = array_merge([$auth->id], $followIds);
+
+        // 対象ユーザーの投稿を新しい順で取得
+        $posts = Post::with('user')->whereIn('user_id', $targetUserIds)->orderBy('created_at', 'desc')->get();
+
+        return view('posts.index', compact('posts'));
     }
 
     public function create(Request $request) {
