@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -24,8 +25,9 @@ class ProfileController extends Controller
         }
         else {
             $user = User::where('id', $userId)->first();
+            $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'DESC')->get();
 
-            return view('profiles.other', compact('user'));
+            return view('profiles.other', compact('user', 'posts'));
         }
     }
 
