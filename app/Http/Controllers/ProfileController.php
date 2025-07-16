@@ -37,7 +37,7 @@ class ProfileController extends Controller
                 'max:40',
                 Rule::unique('users', 'email')->ignore(Auth::id()),
             ],
-            'password' => ['required', 'alpha_num', 'min:8', 'max:20'],
+            'password' => ['required', 'alpha_num', 'min:8', 'max:20', 'confirmed'],
             'password_confirmation' => ['required', 'same:password', 'alpha_num', 'min:8', 'max:20'],
             'bio' => ['nullable', 'string', 'max:150'],
             'icon_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,bmp,gif,svg'],
