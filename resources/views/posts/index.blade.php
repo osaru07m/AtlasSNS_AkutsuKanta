@@ -23,7 +23,7 @@
 
       <div class="content">
         <span>{{ $post->user->username }}</span>
-        <p>{{ $post->post }}</p>
+        <p>{!! nl2br(e($post->post)) !!}</p>
       </div>
 
       <div class="meta">
