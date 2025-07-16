@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,7 +11,10 @@ class FollowsController extends Controller
 {
     //
     public function followList(){
-        return view('follows.followList');
+        $follows = Auth::user()->follows()->pluck('followed_id')->toArray();
+        $posts = Post::whereIn('user_id', $follows)->orderBy('created_at', 'DESC')->get();
+
+        return view('follows.followList', compact('posts'));
     }
     public function followerList(){
         return view('follows.followerList');
