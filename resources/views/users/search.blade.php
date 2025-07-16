@@ -14,7 +14,6 @@
         {{ Form::close() }}
         <ul id="users">
             @foreach ($users as $user)
-            {{ $user->username }}
             <li>
                 @php
                 $auth = Auth::user();
@@ -29,9 +28,9 @@
 
                     {{-- ボタン分岐 --}}
                     @if (!$isFollowing)
-                    <button class="btn follow">フォローする</button>
+                    <a href="{{ route('follow') }}" class="btn follow">フォローする</a>
                     @elseif ($isFollowing)
-                    <button class="btn unfollow">フォロー解除</a>
+                    <a href="{{ route('unfollow') }}" class="btn unfollow">フォロー解除</a>
                     @endif
                 </div>
             </li>
