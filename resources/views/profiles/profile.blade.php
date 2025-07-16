@@ -7,11 +7,11 @@
             @csrf
             <div>
                 <label for="username">ユーザー名</label>
-                <input type="text" name="username" id="username" class="input" required>
+                <input type="text" name="username" value="{{ Auth::user()->username }}" id="username" class="input" required>
             </div>
             <div>
-                <label for="mail">メールアドレス</label>
-                <input type="text" name="mail" id="mail" class="input" required>
+                <label for="email">メールアドレス</label>
+                <input type="email" name="email" value="{{ Auth::user()->email }}" id="email" class="input" required>
             </div>
             <div>
                 <label for="password">パスワード</label>
@@ -23,7 +23,7 @@
             </div>
             <div>
                 <label for="bio">自己紹介</label>
-                <textarea name="bio" id="bio" class="input"></textarea>
+                <textarea name="bio" value="{{ Auth::user()->bio }}" id="bio" class="input"></textarea>
             </div>
             <div>
                 <label for="icon_image">アイコン画像</label>
