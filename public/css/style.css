@@ -109,6 +109,61 @@ header{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
+#side-bar #confirm {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+    border-bottom: 1px solid #727272;
+}
+#side-bar #confirm p {
+    margin-bottom: 0;
+}
+
+#side-bar #confirm > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+#side-bar #confirm > p.btn {
+    all: initial;
+    width: 100%;
+}
+#side-bar #confirm > p.btn a {
+    padding: .5em 0;
+    width: 80%;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    border-radius: .5em;
+    color: #E0E0E0;
+    background-color: #0756CF;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: .85em;
+}
+
+#side-bar > .btn {
+    all: initial;
+    padding: 1em;
+}
+#side-bar > .btn a {
+    padding: .5em 0;
+    width: 80%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: .5em;
+    color: #E0E0E0;
+    background-color: #0756CF;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: .85em;
+}
 
 /* followList and followerList */
 #followListContainer,
