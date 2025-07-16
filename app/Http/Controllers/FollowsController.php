@@ -16,17 +16,29 @@ class FollowsController extends Controller
     }
 
     // フォローする
-    public function follow($userId)
+    public function follow($userId, Request $request)
     {
         Auth::user()->follow($userId);
+
+        $redirect = $request->redirect;
+
+        if (!is_null($redirect)) {
+            return redirect($redirect);
+        }
 
         return back();
     }
 
     // フォロー解除する
-    public function unfollow($userId)
+    public function unfollow($userId, Request $request)
     {
         Auth::user()->unfollow($userId);
+
+        $redirect = $request->redirect;
+
+        if (!is_null($redirect)) {
+            return redirect($redirect);
+        }
 
         return back();
     }
