@@ -1,0 +1,17 @@
+# 間違えて関係ない画像をコミットしないように...
+*
+!.gitignore
+!atlas.png
+!edit_h.png
+!edit.png
+!icon1.png
+!icon2.png
+!icon3.png
+!icon4.png
+!icon5.png
+!icon6.png
+!icon7.png
+!post.png
+!search.png
+!trash-h.png
+!trash.png
