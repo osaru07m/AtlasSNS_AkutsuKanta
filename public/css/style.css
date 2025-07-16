@@ -146,6 +146,67 @@ header{
     border-radius: 100%;
 }
 
+/* Profile */
+#profileContainer {
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    gap: 1em;
+}
+
+#profileContainer > img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+}
+
+#profileContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+#profileContainer form div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profileContainer form div label {
+    width: 35%;
+    margin-bottom: 0;
+}
+
+#profileContainer form div input,
+#profileContainer form div textarea {
+    width: 64%;
+}
+
+#profileContainer form div textarea {
+    flex-grow: 1;
+    resize: none;
+    field-sizing: content;
+    /* 初期で2行分の高さ => font-size * line-height * 行数 */
+    min-height: calc(1.125em * 1.5 * 2);
+    line-height: 1.5;
+    font-size: 1.125em;
+    box-sizing: border-box;
+}
+
+#profileContainer form input[type="submit"] {
+    border: none;
+    padding: .5em 2em;
+    border-radius: .5em;
+    color: #E0E0E0;
+    background-color: #EE3833;
+}
+
 /* Profile.Other */
 #otherProfile {
     display: flex;
