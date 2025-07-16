@@ -30,7 +30,7 @@ class ProfileController extends Controller
     public function update(Request $request) {
         $request->validate([
             'username' => ['required', 'string', 'min:2', 'max:12'],
-            'mail' => [
+            'email' => [
                 'required',
                 'email',
                 'min:5',
@@ -44,7 +44,7 @@ class ProfileController extends Controller
         ],
         [
             'username.required' => 'ユーザー名は必須です。',
-            'mail.email' => '正しいメールアドレス形式で入力してください。',
+            'email.email' => '正しいメールアドレス形式で入力してください。',
             'password.alpha_num' => 'パスワードは英数字のみで入力してください。',
             'password_confirmation.same' => '確認用パスワードが一致しません。',
             'icon_image.image' => '画像ファイルを選択してください。',
