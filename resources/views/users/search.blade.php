@@ -3,7 +3,7 @@
     <div id="searchContainer">
         {{ Form::open(['url' => route('search'), 'method' => 'GET']) }}
             <div>
-                {{ Form::text('keyword', old('keyword'), ['class' => 'input']) }}
+                {{ Form::text('keyword', old('keyword'), ['class' => 'input', 'placeholder' => 'ユーザー名で検索']) }}
                 <button type="submit" class="search-button">
                     <img src="{{ asset('images/search.png') }}" alt="検索" style="width: 24px; height: 24px;">
                 </button>
