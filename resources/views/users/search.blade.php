@@ -13,6 +13,9 @@
             @endif
         {{ Form::close() }}
         <ul id="users">
+            @if (empty($users))
+            <li id="userEmptyMsg">表示可能なユーザーがいません。</li>
+            @else
             @foreach ($users as $user)
             <li>
                 @php
@@ -38,6 +41,7 @@
                 </div>
             </li>
             @endforeach
+            @endif
         </ul>
     </div>
 
