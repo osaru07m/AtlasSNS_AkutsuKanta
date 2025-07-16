@@ -493,6 +493,71 @@ header{
   transform: translate(-50%, -50%);
 }
 
+.post .modal.editModal .modalContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: none !important;
+}
+
+.post .modal.editModal .modalContent .cancelBtn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.post .modal.editModal .modalContent .editBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.post .modal.editModal .modalContent .editBox img {
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+}
+
+.post .modal.editModal .modalContent .editBox .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.post .modal.editModal .modalContent .editBox .content textarea {
+    width: 100%;
+    flex-grow: 1;
+    resize: none;
+    field-sizing: content;
+    /* 初期で2行分の高さ => font-size * line-height * 行数 */
+    min-height: calc(1.125em * 1.5 * 2);
+    line-height: 1.5;
+    font-size: 1.125em;
+    background: transparent;
+    border: 1px solid #72727250;
+}
+
+.post .modal.editModal .modalContent button[type="submit"] {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.post .modal.editModal .modalContent button[type="submit"] img {
+    width: 3em;
+    height: 3em;
+}
+
 .post .modal .modalContent .post {
     border-bottom: none;
     background-color: #72727225;

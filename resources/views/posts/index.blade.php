@@ -29,6 +29,12 @@
       <div class="meta">
         <span>{{ $post->created_at->format('Y-m-d H:i') }}</span>
         <div class="actionBtns">
+          <button class="editBtnTrigger">
+            <span class="icon">
+              <img src="{{ asset('images/edit.png') }}" class="normal">
+              <img src="{{ asset('images/edit_h.png') }}" class="hover">
+            </span>
+          </button>
           <button class="deleteBtnTrigger">
             <span class="icon">
               <img src="{{ asset('images/trash.png') }}" class="normal">
@@ -36,6 +42,27 @@
             </span>
           </button>
         </div>
+      </div>
+
+      <div class="modal editModal">
+        <form class="modalContent" action="{{ route('postUpdate', ['postId' => $post->id]) }}" method="POST">
+          @csrf
+          <button type="button" class="cancelBtn">X</button>
+          <div class="editBox">
+            <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="{{ $post->user->username }}さんのアイコン">
+            <div class="content">
+              <span>{{ $post->user->username }}</span>
+              <textarea name="post" required>{{ $post->post }}</textarea>
+            </div>
+            <div class="meta">
+              <span>{{ $post->created_at->format('Y-m-d H:i') }}</span>
+            </div>
+          </div>
+          <p>上記の内容に編集を行います。よろしいでしょうか？</p>
+          <button type="submit">
+            <img src="{{ asset('images/edit.png') }}">
+          </button>
+        </form>
       </div>
 
       <div class="modal deleteModal">

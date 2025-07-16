@@ -35,6 +35,18 @@ class PostsController extends Controller
         return redirect('top');
     }
 
+    public function update($postId, Request $request) {
+        $request->validate([
+            'post' => 'required|string|max:150',
+        ]);
+
+        $post = Post::find($postId);
+        $post->post = $request->post;
+        $post->update();
+
+        return redirect('top');
+    }
+
     public function destroy($postId)
     {
         $post = Post::find($postId);
