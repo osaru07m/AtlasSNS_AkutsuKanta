@@ -34,4 +34,12 @@ class PostsController extends Controller
 
         return redirect('top');
     }
+
+    public function destroy($postId)
+    {
+        $post = Post::find($postId);
+        $post->delete();
+
+        return redirect('top');
+    }
 }

@@ -382,7 +382,8 @@ header{
     width: 100%;
 }
 
-#postContainer #postList li {
+#postContainer #postList li,
+.post {
     margin: 0 auto;
     padding: 1em 10%;
     display: flex;
@@ -391,11 +392,13 @@ header{
     gap: 1em;
 }
 
-#postContainer #postList li:not(:last-child) {
+#postContainer #postList li:not(:last-child),
+.post:not(:last-child) {
     border-bottom: 1px solid #727272;
 }
 
-#postContainer #postList li img {
+#postContainer #postList li > img,
+.post > img {
     width: 4em;
     height: 4em;
     aspect-ratio: 1/1;
@@ -404,6 +407,125 @@ header{
     object-position: center;
 }
 
-#postContainer #postList li div {
+#postContainer #postList li .content,
+.post .content {
     flex-grow: 1;
+}
+
+#postContainer #postList li .meta .actionBtns,
+.post .actionBtns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+}
+
+#postContainer #postList li .meta .actionBtns button,
+.post .actionBtns button {
+    padding: 0;
+    background: none;
+    border: none;
+    height: 3em;
+}
+
+#postContainer #postList li .meta .actionBtns button .icon,
+.post .actionBtns button .icon {
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+}
+
+#postContainer #postList li .meta .actionBtns .icon .normal,
+.post .actionBtns .icon .normal,
+#postContainer #postList li .meta .actionBtns .icon .hover,
+.post .actionBtns .icon .hover {
+    border-radius: 0;
+    width: 3em;
+    height: 3em;
+}
+
+#postContainer #postList li .meta .actionBtns .icon .hover,
+.post .actionBtns .icon .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#postContainer #postList li .meta .actionBtns .icon:hover .hover,
+.post .actionBtns .icon:hover .hover {
+  opacity: 1;
+}
+
+#postContainer #postList li .meta .actionBtns .icon:hover .normal,
+.post .actionBtns .icon:hover .normal {
+  opacity: 0;
+}
+
+/* モーダル基本非表示 */
+.post .modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  width: 100vw;
+  height: 100dvh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.post .modal.show {
+  display: flex;
+}
+
+.post .modal .modalContent {
+  background: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post .modal .modalContent .post {
+    border-bottom: none;
+    background-color: #72727225;
+    border-radius: .25em;
+    margin-bottom: 1em;
+}
+
+.post .modal .modalContent .modalBtns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5em;
+}
+
+.post .modal .modalContent .confirmDeleteBtn {
+    padding: .5em 2em;
+    border-radius: .5em;
+    font-size: 1.125em;
+    line-height: 1.125em;
+    color: #E0E0E0;
+    background-color: #0756CF;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.post .modal .modalContent .cancelBtn {
+    padding: .5em 2em;
+    border-radius: .5em;
+    font-size: 1.125em;
+    line-height: 1.125em;
+    color: #727272;
+    background-color: #ffffff;
+    border: 1px solid #727272;
+    text-decoration: none;
 }
