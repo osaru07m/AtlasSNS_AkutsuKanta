@@ -1,7 +1,7 @@
 <x-login-layout>
 
     <div id="searchContainer">
-        {{ Form::open(['url' => route('search')]) }}
+        {{ Form::open(['url' => route('search'), 'method' => 'GET']) }}
             <div>
                 {{ Form::text('keyword', old('keyword'), ['class' => 'input']) }}
                 <button type="submit" class="search-button">
