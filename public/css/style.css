@@ -325,3 +325,85 @@ header{
 #searchContainer #users li div .btn.unfollow {
     background-color: var(--bg-unfollow);
 }
+
+#postContainer form {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1em;
+    padding: 2em 4em;
+    border-bottom: 10px solid #E0E0E0;
+}
+
+#postContainer form .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#postContainer form .icon img {
+    width: 4em;
+    height: 4em;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#postContainer form textarea {
+    flex-grow: 1;
+    resize: none;
+    field-sizing: content;
+    /* 初期で2行分の高さ => font-size * line-height * 行数 */
+    min-height: calc(1.125em * 1.5 * 2);
+    line-height: 1.5;
+    font-size: 1.125em;
+    background: transparent;
+    border: 1px solid #72727250;
+}
+
+#postContainer form .btnBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#postContainer form .btnBox .btn {
+    width: 3em;
+    height: 3em;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+#postContainer form .btnBox .btn img {
+    width: 100%;
+}
+
+#postContainer #postList li {
+    margin: 0 auto;
+    padding: 1em 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#postContainer #postList li:not(:last-child) {
+    border-bottom: 1px solid #727272;
+}
+
+#postContainer #postList li img {
+    width: 4em;
+    height: 4em;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#postContainer #postList li div {
+    flex-grow: 1;
+}
