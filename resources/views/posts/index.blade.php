@@ -49,18 +49,11 @@
       <div class="modal editModal">
         <form class="modalContent" action="{{ route('postUpdate', ['postId' => $post->id]) }}" method="POST">
           @csrf
-          <button type="button" class="cancelBtn">X</button>
           <div class="editBox">
-            <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="{{ $post->user->username }}さんのアイコン">
             <div class="content">
-              <span>{{ $post->user->username }}</span>
-              <textarea name="post" required>{{ $post->post }}</textarea>
-            </div>
-            <div class="meta">
-              <span>{{ $post->created_at->format('Y-m-d H:i') }}</span>
+              <textarea name="post" required maxlength="150">{{ $post->post }}</textarea>
             </div>
           </div>
-          <p>上記の内容に編集を行います。よろしいでしょうか？</p>
           <button type="submit">
             <img src="{{ asset('images/edit.png') }}">
           </button>
