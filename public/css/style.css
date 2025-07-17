@@ -504,8 +504,17 @@ header{
     padding: 1em 10%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 1em;
+}
+
+#postContainer #postList li .meta,
+.post .meta {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #postContainer #postList li:not(:last-child),
