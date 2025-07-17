@@ -14,8 +14,9 @@
   <ul id="postList">
     @foreach ($posts as $post)
     <li class="post">
-      <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="{{ $post->user->username }}さんのアイコン">
-
+      <a href="{{ route('profile.other', ['userId' => $post->user->id]) }}">
+        <img src="{{ asset('images/' . $post->user->icon_image) }}" alt="{{ $post->user->username }}さんのアイコン">
+      </a>
       <div class="content">
         <span>{{ $post->user->username }}</span>
         <p>{!! nl2br(e($post->post)) !!}</p>
